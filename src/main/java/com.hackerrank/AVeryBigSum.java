@@ -3,9 +3,12 @@ package com.hackerrank;
 public class AVeryBigSum {
 
     static long aVeryBigSum(long[] ar) {
+        /*
+        Problem: https://www.hackerrank.com/challenges/a-very-big-sum/problem
+        */
+
         long l = 0L;
         for (int i = 0; i < ar.length; i++) {
-            //int el = arr.indexOf(i);
             long el = ar[i];
             l = l + el;
         }

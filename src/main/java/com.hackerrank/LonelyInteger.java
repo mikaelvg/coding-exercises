@@ -5,29 +5,38 @@ import java.util.Arrays;
 public class LonelyInteger {
 
     static int lonelyinteger(int[] a) {
-        int preValue = -1;
+        /*
+        Problem: https://www.hackerrank.com/challenges/lonely-integer/problem
+         */
+
+        int prevValue = -1;
         int uniqueValue = -1;
         int currentValue;
         int notMatchCounter = 0; // if 2, then get prev value
-        Arrays.sort(a);
+
+        Arrays.sort(a); // Sort the array and out similar values to gether
+
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
             currentValue = a[i];
             uniqueValue = a[i]; // if array count = 1 & the last number is the unique number.
 
-            if (preValue != currentValue) {
+            // Ex. from 2 to 3 2 2->3 3
+            if (prevValue != currentValue) {
                 notMatchCounter ++;
             }
 
-            if (preValue == currentValue) {
+            // Reset the counter if two same consecutive values
+            if (prevValue == currentValue) {
                 notMatchCounter = 0;
             }
 
+            // Increment twice in a row Ex. from 2 to 4  2 2 -> 3 -> 4
             if (notMatchCounter == 2) {
-                uniqueValue = preValue;
+                uniqueValue = prevValue; // 3, the prev value is unique/
                 break;
             }
-            preValue = a[i];
+            prevValue = a[i];
         };
         return uniqueValue;
     }

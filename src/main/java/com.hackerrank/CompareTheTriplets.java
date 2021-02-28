@@ -7,8 +7,12 @@ public class CompareTheTriplets {
 
     static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
 
+        /*
+        Problem: https://www.hackerrank.com/challenges/compare-the-triplets/problem
+         */
+
         List<Integer> R = new ArrayList<>();
-        int size = a.size();
+        int size = a.size(); // Get one size only. A and B have same size.
         int aCounter = 0;
         int bCounter = 0;
 

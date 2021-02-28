@@ -5,8 +5,14 @@ import java.text.DecimalFormat;
 public class MiniMaxSum {
 
     static void miniMaxSum(int[] arr) {
+
+        /*
+        Problem: https://www.hackerrank.com/challenges/mini-max-sum/problem
+         */
+
         double min = getMin (arr);
         double max = getMax (arr);
+
         double minTotal = 0;
         double maxTotal = 0;
         int size = arr.length;
