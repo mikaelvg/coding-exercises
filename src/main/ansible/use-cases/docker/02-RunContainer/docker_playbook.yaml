@@ -1,0 +1,25 @@
+---
+-
+
+  hosts: ubuntu-c
+
+  tasks:
+    - name: Pull images
+      docker_image:
+        name: "{{ item }}"
+        source: pull
+      with_items:
+        - centos
+        - ubuntu
+        - redis
+        - nginx
+        - wernight/funbox
+
+    - name: Create an nginx container
+      docker_container:
+        name: containerwebserver
+        image: nginx
+        ports:
+          - 80:80
+        container_default_behavior: no_defaults
+...

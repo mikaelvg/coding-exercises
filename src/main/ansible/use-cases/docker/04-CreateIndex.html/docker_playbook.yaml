@@ -1,0 +1,55 @@
+---
+-
+
+  # Hosts: where our play will run and options it will run with
+  hosts: ubuntu-c
+  
+  # Tasks: the list of tasks that will be executed within the play, this section
+  # can also be used for pre and post tasks
+  tasks:
+    - name: Pull images
+      docker_image:
+        name: "{{ item }}"
+        source: pull
+      with_items:
+        - centos
+        - ubuntu
+        - redis
+        - nginx
+        - wernight/funbox
+
+    - name: Create a customised index.html
+      copy:
+        dest: ./index.html
+        mode: 0644
+        content: |
+          Customised page for nginxcustomised
+
+    - name: Create a customised Dockerfile
+      copy:
+        dest: ./Dockerfile
+        mode: 0644
+        content: |
+          FROM nginx
+          COPY index.html /usr/share/nginx/html/index.html
+
+    - name: Build a customised image
+      docker_image:
+        name: nginxcustomised:latest
+        source: build
+        build:
+          path: .
+          pull: yes
+        state: present
+        force_source: yes
+
+    - name: Create an nginxcustomised container
+      docker_container:
+        name: containerwebserver
+        image: nginxcustomised:latest
+        ports:
+          - 80:80
+        container_default_behavior: no_defaults
+        recreate: yes
+
+...
