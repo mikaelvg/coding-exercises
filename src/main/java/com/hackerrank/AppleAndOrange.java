@@ -2,6 +2,7 @@ package com.hackerrank;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class AppleAndOrange {
 
@@ -48,6 +49,11 @@ public class AppleAndOrange {
         System.out.println(appleCounter);
         System.out.println(orangeCounter);
 
+        Scanner scanner = new Scanner(System.in);
+        String myString = scanner.next();
+
+        boolean count = scanner.hasNext();
+
     }
 
     public static void main(String[] args)  {
@@ -64,10 +70,10 @@ public class AppleAndOrange {
         System.out.println("ArrayList : " + apples.toString());
 
         List<Integer> oranges = new ArrayList<Integer>();
-        apples.add(5);
-        apples.add(-6);
-        apples.add(1);
-        System.out.println("ArrayList : " + apples.toString());
+        oranges.add(5);
+        oranges.add(-6);
+        oranges.add(1);
+        System.out.println("ArrayList : " + oranges.toString());
 
         countApplesAndOranges(s, t, a, b, apples, oranges);
 
