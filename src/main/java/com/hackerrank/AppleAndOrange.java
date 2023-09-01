@@ -23,13 +23,13 @@ public class AppleAndOrange {
 
         int appleCounter = 0;
         int orangeCounter = 0;
-        int distance = b - a;
+        int distance = b - a; // Distance between the two tree
 
-        System.out.println("distance=" + distance);
-        System.out.println("s=" + s);
-        System.out.println("t=" + t);
-        System.out.println("a=" + a);
-        System.out.println("b=" + b);
+        System.out.println("distance between 2 trees =" + distance);
+        System.out.println("s=" + s); //House starting point
+        System.out.println("t=" + t); //House end point
+        System.out.println("a=" + a); //Apple point
+        System.out.println("b=" + b); //Orange point
 
         for (int i = 0; i < apples.size(); i++) {
             // Location of apple tree + the distance fruit where it falls.
@@ -61,13 +61,13 @@ public class AppleAndOrange {
         apples.add(-2);
         apples.add(2);
         apples.add(1);
-        System.out.println("ArrayList : " + apples.toString());
+        System.out.println("Apple ArrayList : " + apples.toString());
 
         List<Integer> oranges = new ArrayList<Integer>();
-        apples.add(5);
-        apples.add(-6);
-        apples.add(1);
-        System.out.println("ArrayList : " + apples.toString());
+        oranges.add(5);
+        oranges.add(-6);
+        oranges.add(1);
+        System.out.println("Orange ArrayList : " + oranges.toString());
 
         countApplesAndOranges(s, t, a, b, apples, oranges);
 
