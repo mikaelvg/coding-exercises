@@ -12,18 +12,22 @@ public class TwoDArrayHourGlass {
         */
 
         int size = arr.size();
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
         int sum = 0;
 
-        for (int x = 0; x < 4; x++) {
-            for (int y = 0; y < 4; y++) {
-                sum += arr.get(x).get(y) + arr.get(x).get(y + 1) + arr.get(x).get(y + 2);
-                sum += arr.get(x + 1).get(y + 1);
-                sum += arr.get(x + 2).get(y) + arr.get(x + 2).get(y + 1) + arr.get(x + 2).get(y + 2);
+        for (int i = 0; i + 2  < size; i++) {
+            for (int j = 0; j + 2  < size; j++) {
+                sum = 0;
+                // Calculate the sum of the current hourglass
+                sum += arr.get(i).get(j) + arr.get(i).get(j + 1) + arr.get(i).get(j + 2);
+                sum += arr.get(i + 1).get(j + 1);
+                sum += arr.get(i + 2).get(j) + arr.get(i + 2).get(j + 1) + arr.get(i + 2).get(j + 2);
+
+                // Update the maximum sum
+                maxSum = Math.max(maxSum, sum);
             }
-            maxSum = Math.max(maxSum, sum);
-            sum = 0;
         }
+
         System.out.println("maxSum = " + maxSum);
     }
     public static void main(String[] args)  {
