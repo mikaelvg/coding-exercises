@@ -2,7 +2,6 @@ package com.hackerrank;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class AppleAndOrange {
 
@@ -48,12 +47,6 @@ public class AppleAndOrange {
         // This is the answer. Return no required.
         System.out.println(appleCounter);
         System.out.println(orangeCounter);
-
-        Scanner scanner = new Scanner(System.in);
-        String myString = scanner.next();
-
-        boolean count = scanner.hasNext();
-
     }
 
     public static void main(String[] args)  {

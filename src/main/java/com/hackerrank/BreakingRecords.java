@@ -40,5 +40,6 @@ public class BreakingRecords {
     public static void main(String[] args)  {
         int[] ar = {12, 24, 10, 24};
         int[] result = breakingRecords(ar);
+        System.out.println(result);
     }
 }
