@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class TemplateClass1 {
+public class AATemplateClass {
 
     static int solutionMethod(int a) {
         return a;
